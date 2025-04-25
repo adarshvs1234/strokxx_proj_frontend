@@ -26,11 +26,15 @@ const Index = () => {
     <Route path='/employeedetails' element={<EmployeePage/>}/>
     <Route path='/paymentOptions' element={<PayOp/>}/>
     <Route path='/card' element={<CardPayPage/>}/>
-    <Route path='/royalty' element={<RoyaltyPage/>}/>
-    <Route path='/editpage' element={<EditPage/>}/>
+   
+    <Route path='/employee/:id/edit' element={<EditPage/>}/>
     <Route path='/addemployee' element={<AddEmpPage/>}/>
     <Route path='/login' element={<LoginPage/>}/>
+
+
+    <Route path='/calculate' element={<RoyaltyPage/>}/>
     
+    <Route path='/status/:franchiseId' element={<RoyaltyPage/>}/>
 
 </Routes>
    

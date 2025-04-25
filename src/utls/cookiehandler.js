@@ -22,3 +22,10 @@ export const getNameToken = ()=>{
     return Cookies.get("userNameData")? jwtDecode(Cookies.get("userNameData")):null
 } 
 
+
+
+//userId
+export const franchise_Id = ()=>{
+    return Cookies.get("franchise_Id")? jwtDecode(Cookies.get("franchise_Id")):null
+}
+

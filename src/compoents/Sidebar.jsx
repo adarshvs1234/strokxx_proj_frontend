@@ -1,13 +1,35 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, ChevronDown, ChevronUp } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true);
   const [feesOpen, setFeesOpen] = useState(false); 
   const navigate = useNavigate();
+  
+  // if(Cookies.get("userId")){
 
-  return (
+  //   const userId = Cookies.get("userId")
+
+  // console.log(userId,"userId HII")
+
+  // }
+
+const handleClick = () =>{
+
+ const userId =  Cookies.get("userId")
+
+  console.log("iiiiiid",userId)
+
+// navigate(`/status/${userId}`)
+
+  navigate('/calculate')
+
+}
+
+
+return (
     <div className="h-screen flex">
       
       <div
@@ -58,9 +80,10 @@ const Sidebar = () => {
            Employee Details
           </li>
           
-          <li className="p-2 hover:bg-gray-700 rounded cursor-pointer" onClick={()=> navigate('/royalty')}>
+          <li className="p-2 hover:bg-gray-700 rounded cursor-pointer" onClick={()=>handleClick()}>
             Royalty
           </li>
+
           <li className="p-2 hover:bg-gray-700 rounded cursor-pointer">
             Training Support
           </li>

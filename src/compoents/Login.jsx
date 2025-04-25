@@ -48,14 +48,22 @@ const initialValues = {
 
     try{
 
-     const token = await mutateAsync(values);
-     console.log("token",token)
-      const data = jwtDecode(token);
+        
+    //  const token = await mutateAsync(values);
+    //  console.log("token",token)
+    //   const data = jwtDecode(token);
+
+    const response = await mutateAsync(values);
+const token = response.token;
+const data = jwtDecode(token);
       
-      Cookies.set("userData",token,{ expires: 1 });  
+      Cookies.set("userData",token,{ expires: 1 }); 
+      //Cookies.set("userId",userId,{expires:1})
+      
       dispatch(login(data),JSON.stringify(values));
+      navigate('/payment')
+
       
-      //navigate('/')
     } 
     
     catch (error) {
